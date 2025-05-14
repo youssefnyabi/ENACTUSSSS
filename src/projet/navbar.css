@@ -1,0 +1,118 @@
+/* Main navbar wrapper */
+.navbar-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50; 
+background: linear-gradient(100DEG, rgba(107, 98, 98, 0.6) , #ffffff );}
+
+/* Transparent mode on scroll */
+.navbar-header.transparent {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: none;
+}
+
+/* Container layout */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.navbar-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-logo {
+  height: 69px;
+  width: auto;
+}
+
+/* Links */
+.navbar-links {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navbar-links {
+    display: flex;
+    gap: 2.5rem;
+    font-weight: 500;
+  }
+
+  .navbar-link {
+    position: relative;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 1rem;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: #1a1a1a;
+    transition: width 0.3s ease;
+  }
+
+  .navbar-link:hover {
+    color: #000000;
+  }
+
+  .navbar-link:hover::after {
+    width: 100%;
+  }
+}
+
+/* Mobile placeholder */
+.navbar-mobile-toggle {
+  display: none;
+}
+/* 🔥 Special Button for "Rejoindre le Club" 🔥 */
+.join-button {
+  padding: 8px 16px;
+  border-radius: 30px;
+  background-color: #ffdb4b;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+
+
+.join-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.join-button:hover {
+  background-color: #ffe96d;
+  border: 2px solid #000;
+  color: #000;
+  box-shadow: 0 0 12px rgba(255, 219, 75, 0.5);
+}
+
+.join-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 219, 75, 0.5);
+}
+
+.join-button {
+  z-index: 1;
+}

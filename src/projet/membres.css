@@ -1,0 +1,144 @@
+/* ===== SECTION & TITLE ===== */
+.membres-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(to bottom, rgba(107, 98, 98, 0.6), #ffffff, #bba735);
+  font-family: 'Poppins', sans-serif;
+}
+
+.membres-title {
+  font-size: 3rem;
+  text-align: center;
+  color: #222;
+  margin-bottom: 4rem;
+  font-weight: 600;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+.membres-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #D4AF37, #F4D03F);
+  margin: 1.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* ===== GRILLE ===== */
+.membres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ===== CARD ===== */
+.membre-card {
+  position: relative;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-top: 4px solid #D4AF37;
+}
+
+.membre-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  border-color: rgba(212, 175, 55, 0.6);
+  border-top-width: 6px;
+}
+
+/* Decorative animated border */
+.membre-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #D4AF37, #F4D03F);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s ease;
+  z-index: 2;
+}
+.membre-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* ===== IMAGE ===== */
+.membre-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== TEXTE ===== */
+.membre-info {
+  padding: 1.2rem 1.5rem;
+  background: white;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.membre-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.4rem;
+}
+
+/* ===== ROLE AVEC HIGHLIGHT ===== */
+.membre-role {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  display: inline-block;
+  position: relative;
+  background-image: linear-gradient(120deg, #f5c518 0%, #f5c518 100%);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  background-position: 0 100%;
+  transition: background-size 0.6s ease-in-out;
+  cursor: default;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.membre-card:hover .membre-role {
+  background-size: 100% 100%;
+  color: #111;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .membres-title {
+    font-size: 2.4rem;
+  }
+
+  .membre-image {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .membres-title {
+    font-size: 2rem;
+  }
+
+  .membre-image {
+    height: 200px;
+  }
+
+  .membres-grid {
+    grid-template-columns: 1fr;
+  }
+}
